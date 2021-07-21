@@ -38,7 +38,7 @@ export default function Home() {
           <div className="container">
             <div className="row">
               <div className="col-xl-6 offset-xl-3">
-                <div className="text-box mt-1 mb-1">
+                <div className="text-box mt-4 mb-7">
                   <p>
                     Você não tem um cadastro?{' '}
                     <a className="blue" href="sign-up.html">
@@ -62,7 +62,7 @@ export default function Home() {
                     </div>
                     <div className="form-group">
                       <input
-                        type="text"
+                        type="password"
                         className="form-control-input"
                         id="password"
                         required
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="footer-decoration">
+        {/* <div className="footer-decoration">
           <svg
             className="footer-frame"
             data-name="Layer 1"
@@ -106,6 +106,20 @@ export default function Home() {
           </svg>
         </div>
 
+        <div className="footer">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-4" />
+              <div className="col-lg-4">
+                <div className="text-container second">
+                  <h6 />
+                </div>
+              </div>
+              <div className="col-lg-4" />
+            </div>
+          </div>
+        </div>
+
         <div className="copyright">
           <div className="container">
             <div className="row">
@@ -117,7 +131,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   );

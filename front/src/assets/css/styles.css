@@ -1204,7 +1204,7 @@ input[type='checkbox'] {
 .footer-decoration {
 	position: relative;
 	width: 100%;
-	height: 10px;
+	height: 20px;
 }
 
 .footer-decoration .footer-frame {
@@ -1212,11 +1212,11 @@ input[type='checkbox'] {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 10px;
+	height: 20px;
 }
 
 .footer {
-	padding-top: 1rem;
+	padding-top: 4rem;
 	padding-bottom: 1rem;
 	background-color: #5f4dee;
 }
@@ -1291,8 +1291,8 @@ a:hover.back-to-top {
 /*     Extra Pages     */
 /***********************/
 .ex-header {
-	padding-top: 1.5rem;
-	padding-bottom: 0.5rem;
+	padding-top: 8.5rem;
+	padding-bottom: 4rem;
 	background-color: #5f4dee;
 }
 
@@ -1598,7 +1598,7 @@ a:hover.back-to-top {
 	}
 	
 	.footer-decoration .footer-frame {
-		height: 30px;
+		height: 60px;
 	}
 	/* end of footer */
 
@@ -1748,5 +1748,9 @@ a:hover.back-to-top {
 		margin-left: 2.875rem;
 	}
 	/* end of extra pages */
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 /* end of min-width 1200px */
