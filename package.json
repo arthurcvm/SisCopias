@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "git-commit-msg-linter": "^3.2.6"
   }
 }
