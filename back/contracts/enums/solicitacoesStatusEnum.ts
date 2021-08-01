@@ -1,0 +1,7 @@
+export enum SolicitacoesStatusEnum {
+  REALIZADA = 'REALIZADA',
+  CANCELADA = 'CANCELADA',
+  APROVADA = 'APROVADA',
+  EXECUTANDO = 'EXECUTANDO',
+  CONCLUIDA = 'CONCLUIDA',
+}
