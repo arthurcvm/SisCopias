@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const BASE_URL =
   process.env.NODE_ENV === 'development'
@@ -8,6 +9,23 @@ const BASE_URL =
 const api = axios.create({
   baseURL: BASE_URL,
 });
+
+api.interceptors.request.use(
+  config => {
+    const token = Cookies.get('auth.token');
+
+    const headers = { ...config.headers };
+
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
+    }
+
+    return { ...config, headers };
+  },
+  error => {
+    return Promise.reject(new Error(error));
+  },
+);
 
 /* const standardResponse = (response) => Promise.resolve(response);
 
@@ -32,22 +50,6 @@ api.interceptors.response.use(
     return errorResponse(error)
   },
 );
-
-api.interceptors.request.use(
-  config => {
-    const { token } = store.getState().auth;
-
-    const headers = { ...config.headers };
-
-    if (token) {
-      headers.Authorization = `Bearer ${token}`;
-    }
-
-    return { ...config, headers };
-  },
-  error => {
-    return Promise.reject(new Error(error));
-  },
-); */
+*/
 
 export default api;

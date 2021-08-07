@@ -1,6 +1,8 @@
 import Head from 'next/head';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function Home() {
+  const { login } = useAuth();
   return (
     <div>
       <Head>
@@ -75,8 +77,9 @@ export default function Home() {
 
                     <div className="form-group">
                       <button
-                        type="submit"
+                        type="button"
                         className="form-control-submit-button"
+                        onClick={() => login('pedro', 'pass')}
                       >
                         Login
                       </button>
