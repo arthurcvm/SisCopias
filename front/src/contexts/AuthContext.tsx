@@ -14,8 +14,7 @@ export const AuthContext = createContext({} as AuthContextData);
 export function AuthContextProvider({ children }: AuthContextProviderProps) {
   function login(user: string, password: string): void {
     const params = { user, password };
-    const response = api.post('login', { params });
-    console.log(response);
+    api.post('login', { params });
   }
 
   return (
