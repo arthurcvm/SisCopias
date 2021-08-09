@@ -11,10 +11,10 @@ export default class Solicitacao extends BaseModel {
   public id: number
 
   @column()
-  public observacoes: string
+  public observacoes: string | null
 
   @column()
-  public justificativa: string
+  public justificativa: string | null
 
   @column()
   public status: SolicitacoesStatusEnum
@@ -23,7 +23,7 @@ export default class Solicitacao extends BaseModel {
   public solicitante_id: number
 
   @column()
-  public autorizante_id: number
+  public autorizante_id: number | null
 
   @column()
   public curso_id: number

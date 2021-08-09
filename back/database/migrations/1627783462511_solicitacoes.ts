@@ -13,7 +13,7 @@ export default class Solicitacoes extends BaseSchema {
       table.timestamp('created_at', { useTz: true }).notNullable()
       table.timestamp('updated_at', { useTz: true }).notNullable()
       table.integer('user_id').references('id').inTable('solicitante').notNullable()
-      table.integer('user_id').references('id').inTable('autorizante').notNullable()
+      table.integer('user_id').references('id').inTable('autorizante').nullable()
       table.integer('curso_id').references('id').inTable('cursos').notNullable()
     })
   }
