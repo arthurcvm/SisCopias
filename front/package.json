@@ -9,14 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "@types/js-cookie": "^2.2.7",
+    "js-cookie": "^3.0.0",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.37.5"
+
   },
   "devDependencies": {
+    "@types/react": "17.0.14",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "7.30.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.23.4",
@@ -24,10 +32,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "@types/react": "17.0.14",
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1",
-    "typescript": "4.3.5",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "typescript": "4.3.5"
   }
 }
