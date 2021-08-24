@@ -1,0 +1,31 @@
+version: '3'
+networks:
+  siscopias:
+    driver: bridge
+services:
+  postgres:
+    ports:
+      - '5432:5432'
+    image: postgres:13.3
+    volumes:
+      - './data/postgres:/var/lib/postgresql/data'
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    restart: always
+    networks:
+      - siscopias
+  backend:
+    container_name: siscopias_backend
+    ports:
+      - '80:3333'
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./back:/var/www/html/backend
+    networks:
+      - siscopias
+    depends_on:
+      - postgres
