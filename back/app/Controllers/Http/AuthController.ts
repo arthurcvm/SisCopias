@@ -27,7 +27,6 @@ export default class AuthController {
       success(response, successHandle({ user, token }, `Bem vindo(a) ${user.nome}`))
     } catch (error) {
       const fields = {
-        document: 'documento',
         password: 'senha',
       }
 
@@ -38,7 +37,7 @@ export default class AuthController {
           data: {
             errors: [{ message: 'Certifique-se que digitou os dados corretamente.' }],
           },
-          message: 'Documento e/ou senha incorreto(s)',
+          message: 'Email e/ou senha incorreto(s)',
         })
       }
     }

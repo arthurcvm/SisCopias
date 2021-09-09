@@ -12,8 +12,8 @@ export default class Solicitacoes extends BaseSchema {
       table.enum('status', Object.values(SolicitacoesStatusEnum)).notNullable()
       table.timestamp('created_at', { useTz: true }).notNullable()
       table.timestamp('updated_at', { useTz: true }).notNullable()
-      table.integer('user_id').references('id').inTable('solicitante').notNullable()
-      table.integer('user_id').references('id').inTable('autorizante').nullable()
+      table.integer('solicitante_id').references('id').inTable('users').notNullable()
+      table.integer('autorizante_id').references('id').inTable('users').nullable()
       table.integer('curso_id').references('id').inTable('cursos').notNullable()
     })
   }
