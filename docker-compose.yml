@@ -4,6 +4,7 @@ networks:
     driver: bridge
 services:
   postgres:
+    container_name: postgres
     ports:
       - '5432:5432'
     image: postgres:13.3
