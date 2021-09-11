@@ -20,11 +20,20 @@ export default class AuthController {
       })
 
       const user = await User.query()
-        .select('id', 'nome', 'email', 'cargo')
+        .select('id', 'nome', 'email', 'cargo', 'ativo')
         .where('email', email)
         .firstOrFail()
 
-      success(response, successHandle({ user, token }, `Bem vindo(a) ${user.nome}`))
+      if (user.ativo) {
+        success(response, successHandle({ user, token }, `Bem vindo(a) ${user.nome}`))
+      } else {
+        badRequest(response, {
+          data: {
+            errors: [{ message: 'Usuário sem autorização de acesso.' }],
+          },
+          message: 'Usuário sem autorização de acesso.',
+        })
+      }
     } catch (error) {
       const fields = {
         password: 'senha',
