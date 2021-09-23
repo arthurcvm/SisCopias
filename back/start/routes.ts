@@ -30,6 +30,6 @@ Route.post('logout', 'AuthController.logout').middleware('auth')
 Route.group(() => {
   Route.resource('users', 'UsersController').apiOnly()
   Route.resource('cursos', 'CursosController').apiOnly()
-  Route.resource('solicitacoes', 'SolicitacoesController').apiOnly()
+  Route.resource('solicitacoes', 'SolicitacoesController').apiOnly().except(['destroy'])
   Route.resource('trabalhos', 'TrabalhosController').apiOnly()
 }).middleware('auth')

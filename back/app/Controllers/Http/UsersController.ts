@@ -99,9 +99,10 @@ export default class UsersController {
 
       const user = await User.find(validatedData.params.id)
       if (user) {
-        await user.delete()
+        user.ativo = false
+        await user.save()
 
-        success(response, successHandle(user, 'Usuário excluído com sucesso'))
+        success(response, successHandle(user, 'Usuário desativado com sucesso'))
       }
     } catch (error) {
       const fields = { 'params.id': 'id' }

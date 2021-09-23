@@ -100,23 +100,4 @@ export default class SolicitacoesController {
       }
     }
   }
-
-  public async destroy({ request, response }: HttpContextContract): Promise<void> {
-    try {
-      const validatedData = await request.validate({
-        schema: showSchema,
-        messages: validation,
-      })
-
-      const solicitacao = await Solicitacao.find(validatedData.params.id)
-      if (solicitacao) {
-        await solicitacao.delete()
-
-        success(response, successHandle(solicitacao, 'Solicitação excluída com sucesso'))
-      }
-    } catch (error) {
-      const fields = { 'params.id': 'id' }
-      badRequest(response, errorHandle(error.messages.errors, fields, 'id incorreto'))
-    }
-  }
 }
