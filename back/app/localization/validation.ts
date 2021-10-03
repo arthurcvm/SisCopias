@@ -3,6 +3,7 @@ export default {
   'string': 'O campo {{ field }} deve ser de texto.',
   'boolean': 'O campo {{ field }} deve ser boolean.',
   'number': 'O campo {{ field }} deve ser numérico.',
+  'email': 'O email deve ser válido',
   'date.format': 'O campo {{ field }} deve ser data.',
   'regex': 'O campo {{ field }} não corresponde com o padrão aceito.',
   'enum': "O campo {{ field }} deve ser '{{ options.choices }}'.",
