@@ -1,5 +1,6 @@
 {
   "*.ts": [
-    "eslint 'app/**' --fix"
+    "eslint 'app/**' --fix",
+    "node -r @adonisjs/assembler/build/register japaFile.ts"
     ]
 }
