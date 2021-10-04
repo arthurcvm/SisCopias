@@ -43,6 +43,8 @@
     "source-map-support": "^0.5.19"
   },
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.ts": [
+      "eslint --cache --fix",
+      "node -r @adonisjs/assembler/build/register japaFile.ts"]
   }
 }
