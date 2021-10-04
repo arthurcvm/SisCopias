@@ -5,8 +5,8 @@ import { UsersTypeEnum } from 'Contracts/enums/usersTypeEnum'
 const user = Object.keys(User.$keys.columnsToSerialized.all())
 
 export const indexSchema = schema.create({
-  page: schema.number(),
-  per_page: schema.number([rules.range(10, 100)]),
+  page: schema.number.optional(),
+  per_page: schema.number.optional([rules.range(10, 100)]),
   order_column: schema.string.optional({}, [rules.regex(new RegExp(`^(${user.join('|')})$`))]),
   order: schema.enum.optional(['asc', 'desc'] as const),
 })
