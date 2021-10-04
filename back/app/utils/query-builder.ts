@@ -32,7 +32,7 @@ export const queryHandle = async (
     return await query
       .orderBy(validatedData.order_column, validatedData.order)
       .where(_builder)
-      .paginate(validatedData.page, validatedData.per_page)
+      .paginate(validatedData.page ?? 1, validatedData.per_page ?? 10)
   } else {
     return await query.where(_builder).paginate(validatedData.page, validatedData.per_page)
   }
