@@ -1,0 +1,3 @@
+{
+  "src/**/*.{ts,tsx,js}": ["eslint --fix", "npm run test -- --watchAll=false"]
+}
