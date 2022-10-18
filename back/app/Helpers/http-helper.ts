@@ -5,6 +5,6 @@ export const success = (response: ResponseContract, data: Data, code: number = 2
   response.status(code).send(data)
 }
 
-export const badRequest = (response: ResponseContract, data: Data): void => {
-  response.status(400).send(data)
+export const badRequest = (response: ResponseContract, data: Data, code: number = 400): void => {
+  response.status(code).send(data)
 }

@@ -30,7 +30,7 @@ Route.post('logout', 'AuthController.logout').middleware('auth')
 
 Route.group(() => {
   Route.group(() => {
-    Route.get('', 'UsersController.index').as('index')
+    Route.get('', 'UsersController.index').as('index').middleware('indexMiddleware')
     Route.post('', 'UsersController.store').as('store')
     Route.get('/:id', 'UsersController.show').as('show')
     Route.put('/:id', 'UsersController.update').as('update')
@@ -41,7 +41,7 @@ Route.group(() => {
     .middleware('cargoMiddleware:' + UsersTypeEnum.ADMIN + ',' + UsersTypeEnum.COORDENADOR)
 
   Route.group(() => {
-    Route.get('', 'CursosController.index').as('index')
+    Route.get('', 'CursosController.index').as('index').middleware('indexMiddleware')
     Route.post('', 'CursosController.store').as('store')
     Route.get('/:id', 'CursosController.show').as('show')
     Route.put('/:id', 'CursosController.update').as('update')
@@ -49,19 +49,10 @@ Route.group(() => {
   })
     .prefix('cursos')
     .as('cursos')
-    .middleware(
-      'cargoMiddleware:' +
-        UsersTypeEnum.ADMIN +
-        ',' +
-        UsersTypeEnum.COORDENADOR +
-        ',' +
-        UsersTypeEnum.PROFESSOR +
-        ',' +
-        UsersTypeEnum.SERVIDOR
-    )
+    .middleware('cargoMiddleware:' + UsersTypeEnum.ADMIN + ',' + UsersTypeEnum.COORDENADOR)
 
   Route.group(() => {
-    Route.get('', 'SolicitacoesController.index').as('index')
+    Route.get('', 'SolicitacoesController.index').as('index').middleware('indexMiddleware')
     Route.post('', 'SolicitacoesController.store').as('store')
     Route.get('/:id', 'SolicitacoesController.show').as('show')
     Route.put('/:id', 'SolicitacoesController.update').as('update')
